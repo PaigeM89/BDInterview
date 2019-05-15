@@ -26,14 +26,14 @@ let main argv =
 
     let example5 = [ 5; 5; 5; 5; 5]
     let outputScore5 = BinaryDefense.Greed.calculateScore example5
-    printfn "Output score was %i, expected score was %i" outputScore5 1050
+    printfn "Output score was %i, expected score was %i" outputScore5 2000
 
     let example1 = [ 1; 1; 1; 5; 1; 1]
     let outputScore1 = BinaryDefense.Greed.calculateScore example1
-    printfn "Output score was %i, expected score was %i" outputScore1 2150
+    printfn "Output score was %i, expected score was %i" outputScore1 4050
 
     let example5 = [ 5; 5; 5; 5; 5; 5]
     let outputScore5 = BinaryDefense.Greed.calculateScore example5
-    printfn "Output score was %i, expected score was %i" outputScore5 1100
+    printfn "Output score was %i, expected score was %i" outputScore5 4000
 
     0 // return an integer exit code

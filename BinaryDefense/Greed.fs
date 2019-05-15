@@ -9,10 +9,15 @@ module Greed =
             //printfn "Number %i has count %i with base score %i" number count baseScore
             if (count >= 3) then                
                 let remainingCount = count - 3
-                if (remainingCount >= 1) then
-                   baseScore * 2 + (getScoreForCount number baseScore (remainingCount - 1))
-                else 
-                   baseScore
+                match remainingCount with
+                | 3 -> 
+                    //no need to recurse because all 6 dice are accounted for
+                    baseScore * 8   
+                | 2 ->
+                    baseScore * 4 + getScoreForCount number baseScore (remainingCount - 2)
+                | 1 -> 
+                    baseScore * 2 + (getScoreForCount number baseScore (remainingCount - 1))
+                | _ -> baseScore                
             else if (number = 1 && count >= 1) then 
                 100 * count
             else if (number = 5 && count >= 1) then 
